@@ -3,6 +3,19 @@
 ## about the project :thinking:
 this project simulates an anonymous question and answer forum, which does not require a login to use any functions.
 
+## executing the project :arrow_forward:
+the following instructions assume that you have ```npm```, ```node``` and ```nodemon``` installed on your computer. also, this project was made using fedora 33 :)
+
+after downloading the project files and being in its root folder, do it on your terminal:
+```
+npm install
+```
+now all project dependencies are installed. To run the application/server, do:
+```
+nodemon index.js
+```
+on your browser, open ```localhost:8010/``` and start making questions!
+
 ## screenshots :camera_flash:
 ![Web 1](https://github.com/leticiachiu/question-forum/blob/master/public/img/menu.jpg) | 
 |:--:| 
