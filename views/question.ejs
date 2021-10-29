@@ -1,0 +1,45 @@
+<%- include('partials/header.ejs');%>
+
+    <body>
+        <%- include('partials/navbar.ejs');%>
+            <div class="container">
+                <hr>
+                <div class="card text-white bg-info mb-3" style="max-width: 200vh;">
+                    <div class="card-header" id="question-box">
+                        <h2>
+                            <%= question.title %>
+                        </h2>
+                    </div>
+                    <div class="card-body" id="question-box-body">
+                        <p class="card-title">
+                            <%= question.description %>
+                        </p>
+                    </div>
+                </div>
+                <form method="POST" action="/answer">
+                    <h5>Answer:</h5>
+                    <textarea placeholder="Type your answer here" class="form-control" name="body"></textarea><br>
+                    <input type="hidden" name="question" value="<%= question.id %>">
+                    <button type="submit" class="btn btn-primary btn-lg float-right">Answer</button>
+                </form>
+                <br><br><br>
+                <h5>Users also answered:</h5>
+                <hr>
+                <% answers.forEach(answer=> { %>
+                    <div class="card border mb-3">
+                        <div class="card-header" id="older-answers">
+                            <h5>
+                                <%= answer.body %>
+                            </h5>
+                        </div class="card-footer bg-transparent border-success" style="color: #540574;">
+                        <p class="text-right font-italic text-secondary">
+                            <%= answer.createdAt %>
+                        </p>
+                        <div>
+
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+    </body>
+    <%- include('partials/footer.ejs');%>
